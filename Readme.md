@@ -40,6 +40,7 @@
       * [28 Python2和3的区别](#28-python2和3的区别)
       * [29 super init](#29-super-init)
       * [30 range and xrange](#30-range-and-xrange)
+      * [31 python优雅技巧](#31-python优雅技巧)
    * [操作系统](#操作系统)
       * [1 select,poll和epoll](#1-selectpoll和epoll)
       * [2 调度算法](#2-调度算法)
@@ -794,6 +795,75 @@ What is the difference between range and xrange functions in Python 2.X?
  xrange is a sequence object that evaluates lazily.
 
 http://stackoverflow.com/questions/94935/what-is-the-difference-between-range-and-xrange-functions-in-python-2-x
+
+## 31 python优雅技巧
+
+###枚举
+
+不要这么做：
+```python
+i = 0
+for item in iterable:
+    print(i, item)
+    i += 1
+```
+而是这样：
+```python
+for i, item in enumerate(iterable):
+    print(i, item)
+```
+Enumerate可以接受第二个参数，例如：
+> list(enumerate('abc'))
+
+[(0, 'a'), (1, 'b'), (2, 'c')]
+
+> list(enumerate('abc', 1))
+
+[(1, 'a'), (2, 'b'), (3, 'c')]
+
+###字典/集合 解析
+
+你可能知道列表解析，但不知道字典/集合解析。
+
+字典/集合解析简单而且高效，例如：
+
+my_dict = {i: i * i for i in range(100)}
+
+my_set = {i * 15 for i in range(100)}
+
+###对象自检
+
+在Python中，可以通过dir()来检查对象，例如：
+> foo = [1, 2, 3, 4]
+
+> dir(foo)
+
+['__add__', '__class__', '__contains__',
+'__delattr__', '__delitem__', '__delslice__', ... ,
+'extend', 'index', 'insert', 'pop', 'remove',
+'reverse', 'sort']
+
+###字符串/数列 逆序
+
+下面的方式可以快速反转一个列表：
+
+> a = [1,2,3,4]
+
+> a[::-1]
+
+[4, 3, 2, 1]
+
+a.reverse()
+这种方式同样适用于字符串：
+
+> foo = 'yasoob'
+
+> foo[::-1]
+
+'boosay'
+
+###...
+
 
 # 操作系统
 
