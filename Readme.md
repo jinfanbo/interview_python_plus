@@ -1,7 +1,9 @@
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
-**Table of Contents**
 
 
+   * [Python基础](#Python基础) 
+      * [1 is 和 == 的区别](#1-is和==的区别)
+      * [2 可变类型和不可表类型](#2-可变类型和不可表类型)
    * [Python语言特性](#python语言特性)
       * [1 Python的函数参数传递](#1-python的函数参数传递)
       * [2 Python中的元类(metaclass)](#2-python中的元类metaclass)
@@ -124,6 +126,25 @@
 <!-- markdown-toc end -->
 
 
+# Python基础
+
+## 1 is 和 == 的区别
+Python中的对象包含三要素：id、type、value
+其中id用来唯一标识一个对象，type标识对象的类型，value是对象的值。
+
+is判断的是a对象是否就是b对象，是通过id来判断的；
+
+==判断的是a对象的值是否和b对象的值相等，是通过value来判断的；
+
+## 2 可变类型和不可表类型
+
+可变类型：可以在原有数据的基础上对数据进行修改(添加或者删除或者修改数据)，修改后内存地址不变
+
+不可变类型: 不能在原有数据的基础上对数据进行修改，当然直接赋值一个新值，那么内存地址会发生改变
+
+可变类型: 列表，集合，字典，对数据进行修改后内存地址不变
+
+不可变类型: 字符串，数字，元组，不能再原有数据的基础上对数据进行修改
 
 
 
