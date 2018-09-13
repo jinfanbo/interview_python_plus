@@ -69,7 +69,7 @@
          * [Redis缺点](#redis缺点)
       * [4 乐观锁和悲观锁](#4-乐观锁和悲观锁)
       * [5 MVCC](#5-mvcc)
-         * [<a href="http://lib.csdn.net/base/mysql">MySQL</a>的innodb引擎是如何实现MVCC的](#mysql的innodb引擎是如何实现mvcc的)
+         * [MySQL的innodb引擎是如何实现MVCC的](#mysql的innodb引擎是如何实现mvcc的)
       * [6 MyISAM和InnoDB](#6-myisam和innodb)
       * [7 数据库的三级模式](#7-数据库的三级模式)
       * [8 数据库系统产生不一致的原因](#8-数据库系统产生不一致的原因)
