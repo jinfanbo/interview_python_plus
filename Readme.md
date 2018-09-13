@@ -4,6 +4,8 @@
    * [Python基础](#Python基础) 
       * [1 is 和 == 的区别](#1-is和==的区别)
       * [2 可变类型和不可表类型](#2-可变类型和不可表类型)
+      * [3 list内置操作的时间复杂度](#3-list内置操作的时间复杂度)
+      * [4 dict内置操作的时间复杂度](#4-dict内置操作的时间复杂度)
    * [Python语言特性](#python语言特性)
       * [1 Python的函数参数传递](#1-python的函数参数传递)
       * [2 Python中的元类(metaclass)](#2-python中的元类metaclass)
@@ -146,7 +148,33 @@ is判断的是a对象是否就是b对象，是通过id来判断的；
 
 不可变类型: 字符串，数字，元组，不能再原有数据的基础上对数据进行修改
 
+## 3 list内置操作的时间复杂度
 
+```python
+append()                O(1)
+pop()                   O(1)
+pop(i)                  O(n)
+insert(i, item)         O(n)
+del operator            O(n)
+__contains__(item)      O(n)(判断是否存在)
+get slice[x:y]          O(k)(切片)
+del slice               O(n)
+set slice               O(n+k)
+reverse                 O(n)
+sort()                  O(nlogn)
+iteration               O(n)
+```
+
+## 4 dict内置操作的时间复杂度
+
+```python
+copy()                  O(n)
+get item                O(1)
+set item                O(1)
+delete item             O(1)
+__contains__(item)      O(1)
+iteration               O(n)
+```
 
 # Python语言特性
 
